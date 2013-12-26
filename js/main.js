@@ -6,25 +6,30 @@
 //Configuration des alias 
 //http://stackoverflow.com/questions/13605600/requirejs-difference-between-requirejs-and-require-functions
 require.config({
-
+	//Force files to be retrieved from the server, not the cache.
+	urlArgs: "bust=" +  (new Date()).getTime(),
+	waitSeconds: 200,
 	paths:{
-		jquery:'libs/jquery/jquery-min',
-		underscore:'libs/underscore/underscore-min',
-		backbone:'libs/backbone/backbone-min',
+
+		jquery:'libs/jquery/1.10.2/jquery',
+		underscore:'libs/underscore/1.5.2/underscore',
+		backbone:'libs/backbone/1.1.0/backbone',
 		handlebars:'libs/handlebars/handlebars-runtime',
 		bootstrap:'libs/bootstrap/bootstrap.min'
 	}, 
 	shim:{
 		'jquery':{
 			exports:'$'
+		},	
+
+		'underscore':{
+			deps:[],
+			exports: '_'				
 		},
+		
 		'backbone':{
 			deps:['underscore', 'jquery'],
 			exports:'Backbone' 
-		},
-
-		'underscore':{
-			exports: '_'				
 		},
 
 		'handlebars':{
@@ -40,8 +45,12 @@ require.config({
 	
 	
 });
-require(['jquery','backbone','app'], function($){
+define(['jquery','underscore','backbone','handlebars','app'], function($,_,Backbone,Handlebars){
 	Backbone.$ = $;
+	console.log("Test output");
+        console.log("$: " + typeof $);
+        console.log("_: " + typeof _);
+        console.log("Backbone: " + typeof Backbone);
 	//Alias to JQuery's DOMReady function
 	//http://stackoverflow.com/questions/10371539/why-define-anonymous-function-and-pass-it-jquery-as-the-argument
 	$(function(){
