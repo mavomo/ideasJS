@@ -1,0 +1,36 @@
+/*************************************************************************************************
+
+		Board : binds the collection and allows some operations on his HTML componenents
+
+*************************************************************************************************/
+define(['factories/ideas','views/board-header.tpl','views/board-bottom-panel.tpl'],
+	function(){
+		var boardView = Backbone.View.extend({
+
+			templateHeader: Handlebars.templates['board-header.tpl'],
+			templateFooter:  Handlebars.templates['board-bottom-panel.tpl'],
+			el:'#container',
+
+			initialize: function(){
+			   console.log('Render:::: Initialize the views');
+			   this.render();
+			},
+
+			render: function(){
+
+			this.$el.append(this.templateHeader({}));
+			this.$el.append(this.templateFooter({}));			
+			//var ideaView = require('factories/ideas').buildIdeasListView();			
+			return this;
+			}, 
+
+		
+	});
+
+	return {
+		buildBoardPage: function(){
+			var viewInstance = new boardView();			
+			return viewInstance;
+		}
+	};
+});

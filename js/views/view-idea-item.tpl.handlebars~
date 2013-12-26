@@ -1,0 +1,5 @@
+<td>{{mLine.id}}</td>
+<td>{{mLine.title}}</td>
+<td><i class="glyphicon glyphicon-star"></i> {{mLine.nbStars}}</td>
+<td>{{mLine.submitionDate}}</td>
+<td></td>

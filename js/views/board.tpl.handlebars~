@@ -1,0 +1,11 @@
+<table class="table">
+<thead>
+	 <tr>
+	 <th>#</th>
+         <th>Idea</th>
+	 <th>Submission date</th>
+         <th>votes</th>
+	</tr>
+ </thead>
+<tbody></tbody>
+</table>

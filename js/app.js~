@@ -1,0 +1,14 @@
+/***************************************
+Bootstrapping the routers of the App
+****************************************/
+define(['routers/router','factories/board'], function(){
+
+	var initialize = function(){
+		console.log("Routing started!");
+		this.view = require('factories/page-idea').buildBoardPage();
+	};
+	
+	return {
+		initialize: initialize
+	};
+});
