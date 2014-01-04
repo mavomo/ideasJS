@@ -15,17 +15,19 @@ var IdeaModel = Backbone.Model.extend({
 
 var IdeaCollection =  Backbone.Collection.extend({
 	model: IdeaModel,
-	
+
 	initialize: function(){
-	 //this.listenTo(this.model,'change', this.changesDetected);
-	},
+	console.log("Initialization of the collection.");
 	
-	changesDetected: function(){
-	alert("A change has been detected!");
+	 this.on('change', function(){
+		console.log('- Something had changed.');
+  	  });
+	
 	}
 	
-	
 });
+
+
 
 var ideas = [
 	{
@@ -47,7 +49,7 @@ var ideas = [
 ];
 
 var modelCollectionInstance = new IdeaCollection(ideas);
-console.log("#modelCollectionInstance.models", modelCollectionInstance.models);  	
+console.log("#modelCollectionInstance.models", modelCollectionInstance.models);  
+	
 return modelCollectionInstance;
-
 });

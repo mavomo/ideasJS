@@ -8,7 +8,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
   buffer += "<td>"
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.mLine)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n<td>"
+    + "</td>\n<td class=\"idea title\" data-id=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.mLine)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.mLine)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n<td><i class=\"glyphicon glyphicon-star\" data-id=\""
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.mLine)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))

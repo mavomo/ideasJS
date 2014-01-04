@@ -18,12 +18,11 @@ define(['factories/ideas', 'views/page-ideas.tpl'],
 			render: function(){			
 
 			this.$el.append(
-				this.template({})
+			 this.template({})
 			  );
 
 			var ideasView = require('factories/ideas').buildIdeasListView();
-				
-			 return this;
+				return this;
 			}, 
 
 		
