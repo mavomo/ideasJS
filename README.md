@@ -1,4 +1,4 @@
-ideasJS: sample backbone app
+ideasJS: sample backbone modular app
 ==========================================
 
 This project is made to learn the core concepts of Backbone, requireJS, underscoreJS, JQuery, Handlebars & cie.
