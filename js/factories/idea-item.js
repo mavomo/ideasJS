@@ -1,14 +1,14 @@
 /*******************************************************
 	Factories for idea-item
 ********************************************************/
-define(['views/view-idea-item.tpl','views/view-idea-item-edit.tpl'], function(){
+define(['views/view-idea-item.tpl'], function(){
 
 	var IdeaItemView = Backbone.View.extend({
 
 		tagName:'tr',
 
 		template: Handlebars.templates['view-idea-item.tpl'],
-		templateEditTitle: Handlebars.templates['view-idea-item-edit.tpl'],
+
 
 		initialize: function(options){
 		 options || (options={});

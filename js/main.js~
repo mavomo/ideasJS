@@ -8,14 +8,16 @@
 require.config({
 	//Force files to be retrieved from the server, not the cache.
 	urlArgs: "bust=" +  (new Date()).getTime(),
-
+	waitSeconds: 200,
 	paths:{
 
 		jquery:'libs/jquery/1.10.2/jquery',
 		underscore:'libs/underscore/1.5.2/underscore',
 		backbone:'libs/backbone/1.1.0/backbone',
 		handlebars:'libs/handlebars/handlebars-runtime',
-		bootstrap:'libs/bootstrap/bootstrap.min'
+		bootstrap:'libs/bootstrap/bootstrap.min',
+		localstorage: 'libs/localstorage/localStorage',
+		jqueryui: "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min",
 	}, 
 	shim:{
 		'jquery':{
@@ -32,6 +34,11 @@ require.config({
 			exports:'Backbone' 
 		},
 
+		'localstorage': {
+			deps: ['underscore','jquery','backbone'],
+			exports: 'localStorage'
+    		},
+
 		'handlebars':{
 			exports:'Handlebars'
 		},
@@ -45,7 +52,7 @@ require.config({
 	
 	
 });
-define(['jquery','underscore','backbone','handlebars','app'], function($,_,Backbone,Handlebars){
+define(['jquery','underscore','backbone','handlebars','localstorage','app'], function($,_,Backbone,Handlebars,localStorage){
 	Backbone.$ = $;
 	console.log("Test output");
         console.log("$: " + typeof $);

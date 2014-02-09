@@ -17,7 +17,7 @@ require.config({
 		handlebars:'libs/handlebars/handlebars-runtime',
 		bootstrap:'libs/bootstrap/bootstrap.min',
 		localstorage: 'libs/localstorage/localStorage',
-		"jqueryui": "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min",
+		jqueryui: "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min",
 	}, 
 	shim:{
 		'jquery':{
@@ -45,14 +45,13 @@ require.config({
 
 		'bootstrap':{
 			deps:['jquery'],
-		        exports:'bootstrap'
 		}
 
 	}
 	
 	
 });
-define(['jquery','underscore','backbone','handlebars','localstorage','app'], function($,_,Backbone,Handlebars,localStorage){
+define(['jquery','underscore','backbone','handlebars','localstorage','bootstrap','app'], function($,_,Backbone,Handlebars,localStorage){
 	Backbone.$ = $;
 	console.log("Test output");
         console.log("$: " + typeof $);

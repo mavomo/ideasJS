@@ -1,7 +1,7 @@
 /*******************************************************
 	Factories for ideas Collection
 ********************************************************/
-define(['models/ideas','views/view-idea-list.tpl', 'factories/idea-item',''], function(){
+define(['models/ideas','views/view-idea-list.tpl', 'factories/idea-item'], function(){
 
 	var IdeasListView = Backbone.View.extend({
 

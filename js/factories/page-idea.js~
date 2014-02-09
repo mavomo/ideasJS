@@ -15,17 +15,14 @@ define(['factories/ideas', 'views/page-ideas.tpl'],
 			   this.render();
 			},
 
-			render: function(){
-			
-			console.log('You are now in the render function.');	
-			//alert(this.$el.length);	
+			render: function(){			
+
 			this.$el.append(
-				this.template({})
+			 this.template({})
 			  );
 
 			var ideasView = require('factories/ideas').buildIdeasListView();
-				
-			 return this;
+				return this;
 			}, 
 
 		
